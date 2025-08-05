@@ -26,7 +26,15 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
+				},
+				cemig: {
+					green: 'hsl(var(--cemig-green))',
+					'green-light': 'hsl(var(--cemig-green-light))',
+					'green-dark': 'hsl(var(--cemig-green-dark))',
+					yellow: 'hsl(var(--cemig-yellow))',
+					'yellow-light': 'hsl(var(--cemig-yellow-light))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',

@@ -9,16 +9,23 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 160 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 160 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 160 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 158 64% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 158 64% 45%;
+    
+    --cemig-green: 158 64% 35%;
+    --cemig-green-light: 158 64% 45%;
+    --cemig-green-dark: 158 64% 25%;
+    --cemig-yellow: 48 100% 58%;
+    --cemig-yellow-light: 48 100% 68%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
