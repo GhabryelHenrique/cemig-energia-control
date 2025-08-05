@@ -2,10 +2,13 @@ import { Zap, TrendingUp, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 
-export const BalanceCard = () => {
-  const currentBalance = 120.50;
-  const estimatedDays = 8;
-  const usagePercent = 65;
+interface BalanceCardProps {
+  balance: number;
+}
+
+export const BalanceCard = ({ balance }: BalanceCardProps) => {
+  const estimatedDays = Math.ceil(balance / 15); // Estimativa baseada em consumo médio
+  const usagePercent = Math.min(((150 - balance) / 150) * 100, 100); // Baseado em limite máximo de 150 kWh
 
   return (
     <Card className="bg-gradient-to-br from-primary to-primary-glow text-primary-foreground border-0 shadow-xl">
@@ -17,7 +20,7 @@ export const BalanceCard = () => {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="text-center">
-          <div className="text-4xl font-bold">{currentBalance.toFixed(2)}</div>
+          <div className="text-4xl font-bold">{balance.toFixed(2)}</div>
           <div className="text-sm opacity-90">kWh disponíveis</div>
         </div>
         

@@ -2,7 +2,11 @@ import { CreditCard, QrCode, Receipt, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export const QuickActions = () => {
+interface QuickActionsProps {
+  onRecharge: () => void;
+}
+
+export const QuickActions = ({ onRecharge }: QuickActionsProps) => {
   const actions = [
     {
       icon: CreditCard,
@@ -42,6 +46,11 @@ export const QuickActions = () => {
               key={index}
               variant={action.variant}
               className="h-16 flex-col gap-1 text-xs"
+              onClick={() => {
+                if (index === 0) onRecharge(); // PIX
+                if (index === 1) onRecharge(); // QR Code
+                if (index === 2) onRecharge(); // Boleto
+              }}
             >
               <action.icon className="h-5 w-5" />
               <div>

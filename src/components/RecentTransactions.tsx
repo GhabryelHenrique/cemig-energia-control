@@ -2,42 +2,20 @@ import { ArrowUpRight, ArrowDownRight, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-const transactions = [
-  {
-    id: "1",
-    type: "recarga",
-    amount: 50.00,
-    date: "Hoje, 14:30",
-    method: "PIX",
-    status: "concluída"
-  },
-  {
-    id: "2",
-    type: "consumo",
-    amount: -8.50,
-    date: "Hoje, 12:00",
-    method: "Uso residencial",
-    status: "automatico"
-  },
-  {
-    id: "3",
-    type: "recarga",
-    amount: 30.00,
-    date: "Ontem, 18:45",
-    method: "QR Code",
-    status: "concluída"
-  },
-  {
-    id: "4",
-    type: "consumo",
-    amount: -12.30,
-    date: "Ontem, 16:20",
-    method: "Uso residencial",
-    status: "automatico"
-  }
-];
+interface Transaction {
+  id: string;
+  type: "recarga" | "consumo";
+  amount: number;
+  date: string;
+  method: string;
+  status: string;
+}
 
-export const RecentTransactions = () => {
+interface RecentTransactionsProps {
+  transactions: Transaction[];
+}
+
+export const RecentTransactions = ({ transactions }: RecentTransactionsProps) => {
   return (
     <Card>
       <CardHeader>
